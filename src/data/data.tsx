@@ -13,7 +13,6 @@ import BilibiliIcon from '../components/Icon/Bilibili';
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -74,14 +73,14 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Los Angeles based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Dlle Construction INC</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I'm a Los Angeles-based <strong className="text-stone-100">Project Manager</strong>, currently working
+        at <strong className="text-stone-100">Dlle Construction INC</strong>, building beautiful commercial buildings and personal homes,
+        while also helping create stunning web pages and interactive websites.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        In my free time, you can catch me <strong className="text-stone-100">Programing</strong>,
+        playing <strong className="text-stone-100">Final Fantasy XIV</strong>, or exploring interesting places
+        and trying new restaurants with friends.
       </p>
     </>
   ),
@@ -105,16 +104,20 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `Hi there! I'm Jiangwei Shi, a Project Manager based in Los Angeles, currently working at 
+  Dlle Construction INC. At work, I help lead the development of stunning commercial buildings and personal homes, 
+  and I’m also involved in creating beautiful websites and interactive web experiences. When I'm not working on 
+  architectural projects or web design, you can catch me coding, diving into the world of Final Fantasy XIV, 
+  or exploring new places and tasting food at unique restaurants with my friends. With a strong background in full-stack 
+  development and project management, I’m always looking for ways to innovate and make an impact, both in construction 
+  and in the digital world`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Arcadia, LA', Icon: MapIcon},
+    {label: 'Age', text: '26', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'Chinese', Icon: FlagIcon},
+    {label: 'Interests', text: 'Programing, Video game, Anime', Icon: SparklesIcon},
+    {label: 'Study', text: 'Northeastern University', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Dlle Construction Inc', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -126,16 +129,16 @@ export const skills: SkillGroup[] = [
     name: 'Spoken languages',
     skills: [
       {
-        name: 'English',
+        name: 'Mandarin',
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'English',
+        level: 8,
       },
       {
-        name: 'Spanish',
-        level: 3,
+        name: 'Japanese',
+        level: 2,
       },
     ],
   },
@@ -144,14 +147,14 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'React',
-        level: 9,
+        level: 8,
       },
       {
         name: 'Typescript',
-        level: 7,
+        level: 8,
       },
       {
-        name: 'GraphQL',
+        name: 'MUI',
         level: 6,
       },
     ],
@@ -160,33 +163,33 @@ export const skills: SkillGroup[] = [
     name: 'Backend development',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Java',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
+        name: 'Spring Boot',
+        level: 6,
       },
       {
-        name: 'Golang',
-        level: 4,
+        name: 'Next',
+        level: 6,
       },
     ],
   },
   {
-    name: 'Mobile development',
+    name: 'Deploy & Database',
     skills: [
       {
-        name: 'React Native',
-        level: 9,
+        name: 'Docker',
+        level: 8,
       },
       {
-        name: 'Flutter',
-        level: 4,
+        name: 'Kubernetes',
+        level: 6,
       },
       {
-        name: 'Swift',
-        level: 3,
+        name: 'MYSQL',
+        level: 8,
       },
     ],
   },
@@ -269,39 +272,74 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'May 2023',
+    location: 'Boston, MA',
+    title: 'Northeastern University - Master',
+    content: <p>Majored in Computer Science with a focus on web development, specializing in Java as the main language.
+      Experienced in React and Spring Boot. Conducted research on vision-language pre-training (VLP) and authored a
+      paper titled <b><i>Rate Pets’ Images and Find Their Pawpularity</i></b>.</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'May 2021',
+    location: 'Albany, NY',
+    title: 'SUNY at Albany - Bachelor',
+    content: <p>Majored in Computer Science, focusing on algorithms and data structures, with Java as main
+      language. Researched Natural Language Processing (NLP) and authored a paper titled <b><i>BIAS in NLP</i></b>,
+      analyzing biases in NLP models.</p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'Jan 2025 - Present',
+    location: 'Dlle Construction Inc',
+    title: 'Project Manager',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        • Use <b>Microsoft Project</b> to schedule and track project progress, ensuring smooth execution.<br />
+        • Communicate with the owner to provide updates on project status.<br />
+        • Coordinate with the city to schedule inspections and ensure the project passes all required inspections.<br />
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'Feb 2024 - Jan 2025',
+    location: 'Global Data Tek',
+    title: 'Full Stack Engineer ',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        • Designed and developed enterprise applications using <b>Core Java, Spring MVC, JPA, and web
+        services</b>, delivering robust, scalable solutions that meet complex business requirements.<br />
+        • Collaborated closely with the <b>Agile Scrum</b> team on requirement analysis, technical design, and
+        development, ensuring the timely delivery of high-quality software.<br />
+        • Spearheaded the development of key modules, including the Login/Signup, Timesheet, and Member
+        Search functionalities, resulting in enhanced system efficiency and a more intuitive user experience.<br />
+        • Crafted and maintained business logic, Controller, and Service layers, facilitating seamless
+        integration and data flow between diverse application components.<br />
+        • Leveraged JPA in the Entity layer for optimized data access and manipulation within a <b>MySQL</b>
+        database, improving query performance and reducing latency.<br />
+        • Performed rigorous <b>unit testing</b> and swiftly resolved bugs, significantly boosting application stability
+        and reliability.<br />
+        • Engineered <b>RESTful Web Services</b> and microservices using <b>Spring Boot</b>, ensuring seamless
+        and reliable communication across distributed systems.<br />
+      </p>
+    ),
+  },
+  {
+    date: 'July 2023 - Feb 2024',
+    location: 'Keelworks Foundation',
+    title: 'Software engineer ',
+    content: (
+      <p>
+        • Led a team of 10 in developing a portfolio generator using <b>Java</b> and <b>JavaScript</b>, significantly improving
+        professional presentation for job seekers.<br />
+        • Employed the <b>Mantine</b> framework in <b>React</b> to create a front-end group chat drawer, enhancing team communication
+        and collaboration.<br />
+        • Implemented the <b>MVC</b> design pattern within the <b>Spring framework</b> to effectively segregate data from logic,
+        ensuring streamlined application functionality.<br />
+        • Utilized <b>Async/Await</b> in React for efficient asynchronous handling, ensuring seamless user interactions.<br />
+        • Contributed directly to a <b>60%</b> increase in job acquisition rates among users with the portfolio generator,
+        demonstrating a significant impact on employment outcomes.<br />
       </p>
     ),
   },
@@ -341,23 +379,23 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'Jiangweishi8@gmail.com',
+      href: 'mailto:Jiangweishi8@gmail.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Arcadia LA, US',
+      href: 'https://www.google.ca/maps/place/Arcadia,+CA/@34.1334232,-118.0718985,13z',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: '@Jiangwei Shi',
+      href: 'https://www.instagram.com/jiangwei_shi_1998/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'Jiangwei Shi',
+      href: 'https://github.com/Jiangwei-shi',
     },
   ],
 };
@@ -366,9 +404,8 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/Jiangwei-shi'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/jiangwei-shi/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/jiangwei_shi_1998/'},
   {label: 'BilibiliIcon', Icon: BilibiliIcon, href: 'https://space.bilibili.com/392344217?spm_id_from=333.1007.0.0'},
 ];
