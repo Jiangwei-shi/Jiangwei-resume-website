@@ -76,6 +76,11 @@ export const heroData: Hero = {
         I'm a Los Angeles-based <strong className="text-stone-100">Project Manager</strong>, currently working
         at <strong className="text-stone-100">Dlle Construction INC</strong>, building beautiful commercial buildings and personal homes,
         while also helping create stunning web pages and interactive websites.
+        I’m a Full Stack Engineer based in Los Angeles with strong expertise in Java, Spring Boot, and modern web development. 
+        I’ve built scalable microservices, optimized backend systems, and led cross-functional teams to deliver impactful products. 
+        At <strong className="text-stone-100">Global Data Tek</strong>, I engineered core system modules that improved performance by 40%. 
+        At <strong className="text-stone-100">One Community Global</strong>, I led the development of a portfolio generator that 
+        helped users land jobs 60% faster. My passion lies in building clean, maintainable code and user-focused solutions.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time, you can catch me <strong className="text-stone-100">Programing</strong>,
@@ -104,13 +109,11 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Hi there! I'm Jiangwei Shi, a Project Manager based in Los Angeles, currently working at 
-  Dlle Construction INC. At work, I help lead the development of stunning commercial buildings and personal homes, 
-  and I’m also involved in creating beautiful websites and interactive web experiences. When I'm not working on 
-  architectural projects or web design, you can catch me coding, diving into the world of Final Fantasy XIV, 
-  or exploring new places and tasting food at unique restaurants with my friends. With a strong background in full-stack 
-  development and project management, I’m always looking for ways to innovate and make an impact, both in construction 
-  and in the digital world`,
+  description: `Full Stack Engineer based in Los Angeles with strong expertise in Java, Spring Boot, 
+  and scalable web application development. At Global Data Tek, I built core backend modules and microservices 
+  that improved system performance by 40%. Previously, I led a 10-member team at One Community Global to develop 
+  a portfolio generator that increased user job acquisition rates by 60%. Passionate about clean code, thoughtful 
+  architecture, and delivering impactful user experiences.`,
   aboutItems: [
     {label: 'Location', text: 'Arcadia, LA', Icon: MapIcon},
     {label: 'Age', text: '26', Icon: CalendarIcon},
@@ -291,38 +294,29 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'Jan 2025 - Present',
-    location: 'Dlle Construction Inc',
-    title: 'Project Manager',
+    date: 'May 2024 - Present',
+    location: 'Global Data Tek',
+    title: 'Full Stack Engineer',
     content: (
       <p>
-        • Use <b>Microsoft Project</b> to schedule and track project progress, ensuring smooth execution.<br />
-        • Communicate with the owner to provide updates on project status.<br />
-        • Coordinate with the city to schedule inspections and ensure the project passes all required inspections.<br />
-      </p>
+      • Engineered enterprise-grade applications using <b>Java, Spring Boot, Spring MVC, and JPA</b>, designing <b>RESTful microservices</b> for scalable system communication.<br />
+      • Led end-to-end development of core modules (Login, Signup, Timesheet, Member Search) in an <b>Agile Scrum</b> workflow, boosting performance by <b>40%</b> and enhancing UX.<br />
+      • Architected a layered backend structure (Controller, Service, Repository), optimizing database access via <b>JPA</b>, which cut query latency by <b>35%</b>.<br />
+      • Established <b>unit and integration testing pipelines</b> to resolve critical bugs and improve deployment reliability.<br />
+     </p>
     ),
   },
   {
-    date: 'Feb 2024 - Jan 2025',
-    location: 'Global Data Tek',
-    title: 'Full Stack Engineer ',
+    date: 'May 2023 - May 2024',
+    location: 'GOne Community Global',
+    title: 'Software Engineer ',
     content: (
       <p>
-        • Designed and developed enterprise applications using <b>Core Java, Spring MVC, JPA, and web
-        services</b>, delivering robust, scalable solutions that meet complex business requirements.<br />
-        • Collaborated closely with the <b>Agile Scrum</b> team on requirement analysis, technical design, and
-        development, ensuring the timely delivery of high-quality software.<br />
-        • Spearheaded the development of key modules, including the Login/Signup, Timesheet, and Member
-        Search functionalities, resulting in enhanced system efficiency and a more intuitive user experience.<br />
-        • Crafted and maintained business logic, Controller, and Service layers, facilitating seamless
-        integration and data flow between diverse application components.<br />
-        • Leveraged JPA in the Entity layer for optimized data access and manipulation within a <b>MySQL</b>
-        database, improving query performance and reducing latency.<br />
-        • Performed rigorous <b>unit testing</b> and swiftly resolved bugs, significantly boosting application stability
-        and reliability.<br />
-        • Engineered <b>RESTful Web Services</b> and microservices using <b>Spring Boot</b>, ensuring seamless
-        and reliable communication across distributed systems.<br />
-      </p>
+      • Directed a <b>10-member team</b> to develop a <b>Java/JavaScript-based</b> portfolio generator, boosting users’ job acquisition rates by <b>60%</b>.<br />
+      • Applied <b>Spring MVC</b> to enforce separation of concerns, improving maintainability and modularity of the backend system.<br />
+      • Built a <b>real-time group chat</b> using <b>React</b> and <b>Mantine</b>, enhancing internal team communication.<br />
+      • Integrated <b>Async/Await</b> patterns to streamline asynchronous UI workflows and improve responsiveness.<br />
+    </p>
     ),
   },
   {
@@ -331,16 +325,10 @@ export const experience: TimelineItem[] = [
     title: 'Software engineer ',
     content: (
       <p>
-        • Led a team of 10 in developing a portfolio generator using <b>Java</b> and <b>JavaScript</b>, significantly improving
-        professional presentation for job seekers.<br />
-        • Employed the <b>Mantine</b> framework in <b>React</b> to create a front-end group chat drawer, enhancing team communication
-        and collaboration.<br />
-        • Implemented the <b>MVC</b> design pattern within the <b>Spring framework</b> to effectively segregate data from logic,
-        ensuring streamlined application functionality.<br />
-        • Utilized <b>Async/Await</b> in React for efficient asynchronous handling, ensuring seamless user interactions.<br />
-        • Contributed directly to a <b>60%</b> increase in job acquisition rates among users with the portfolio generator,
-        demonstrating a significant impact on employment outcomes.<br />
-      </p>
+      • Built an interactive <b>chat feature</b> using <b>TypeScript, React, MUI, and Redux</b>, increasing user engagement by <b>30%</b>.<br />
+      • Integrated <b>real-time communication</b> via <b>Socket.IO</b> and managed side effects using <b>Redux-Saga</b> for a seamless UX.<br />
+      • Designed <b>modular UI components</b> (e.g., chat drawer) to enhance accessibility and improve interface clarity.<br />
+    </p>
     ),
   },
 ];
