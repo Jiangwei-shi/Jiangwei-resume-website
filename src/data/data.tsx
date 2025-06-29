@@ -73,13 +73,11 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Los Angeles-based <strong className="text-stone-100">Project Manager</strong>, currently working at{' '}
-        <strong className="text-stone-100">Dlle Construction INC</strong>, building beautiful commercial buildings and
-        personal homes, while also helping create stunning web pages and interactive websites. I’m a Full Stack Engineer
-        based in Los Angeles with strong expertise in Java, Spring Boot, and modern web development. I’ve built scalable
-        microservices, optimized backend systems, and led cross-functional teams to deliver impactful products. At{' '}
-        <strong className="text-stone-100">Global Data Tek</strong>, I engineered core system modules that improved
-        performance by 40%. At <strong className="text-stone-100">One Community Global</strong>, I led the development
+        I'm a Los Angeles-based <strong className="text-stone-100">Full Stack Engineer</strong>, currently working at{' '}
+        <strong className="text-stone-100">Global Data Tek</strong>, helping create stunning web pages and interactive websites. 
+        With strong expertise in Java, Spring Boot, and modern web development. I’ve built scalable
+        microservices, optimized backend systems, and led cross-functional teams to deliver impactful products. 
+        At <strong className="text-stone-100">One Community Global</strong>, I led the development
         of a portfolio generator that helped users land jobs 60% faster. My passion lies in building clean, maintainable
         code and user-focused solutions.
       </p>
