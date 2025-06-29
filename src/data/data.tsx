@@ -342,9 +342,9 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    date: 'July 2023 - Feb 2024',
-    location: 'Keelworks Foundation',
-    title: 'Software engineer ',
+    date: 'May 2022 - Aug 2022',
+    location: 'Valitee',
+    title: ' Front End Web Developer Intern ',
     content: (
       <p>
         • Built an interactive <b>chat feature</b> using <b>TypeScript, React, MUI, and Redux</b>, increasing user
