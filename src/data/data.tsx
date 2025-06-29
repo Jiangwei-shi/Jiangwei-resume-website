@@ -8,12 +8,6 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-// import TwitterIcon from '../components/Icon/TwitterIcon';
-import BilibiliIcon from '../components/Icon/Bilibili';
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
-import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../../public/assets/portfolio-1.jpg';
 import porfolioImage2 from '../../public/assets/portfolio-2.jpg';
 import porfolioImage3 from '../../public/assets/portfolio-3.jpg';
@@ -25,6 +19,12 @@ import porfolioImage8 from '../../public/assets/portfolio-8.jpg';
 import porfolioImage9 from '../../public/assets/portfolio-9.jpg';
 import porfolioImage10 from '../../public/assets/portfolio-10.jpg';
 import porfolioImage11 from '../../public/assets/portfolio-11.jpg';
+// import TwitterIcon from '../components/Icon/TwitterIcon';
+import BilibiliIcon from '../components/Icon/Bilibili';
+import GithubIcon from '../components/Icon/GithubIcon';
+import InstagramIcon from '../components/Icon/InstagramIcon';
+import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import heroImage from '../images/header-background.webp';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -73,19 +73,20 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Los Angeles-based <strong className="text-stone-100">Project Manager</strong>, currently working
-        at <strong className="text-stone-100">Dlle Construction INC</strong>, building beautiful commercial buildings and personal homes,
-        while also helping create stunning web pages and interactive websites.
-        I’m a Full Stack Engineer based in Los Angeles with strong expertise in Java, Spring Boot, and modern web development. 
-        I’ve built scalable microservices, optimized backend systems, and led cross-functional teams to deliver impactful products. 
-        At <strong className="text-stone-100">Global Data Tek</strong>, I engineered core system modules that improved performance by 40%. 
-        At <strong className="text-stone-100">One Community Global</strong>, I led the development of a portfolio generator that 
-        helped users land jobs 60% faster. My passion lies in building clean, maintainable code and user-focused solutions.
+        I'm a Los Angeles-based <strong className="text-stone-100">Project Manager</strong>, currently working at{' '}
+        <strong className="text-stone-100">Dlle Construction INC</strong>, building beautiful commercial buildings and
+        personal homes, while also helping create stunning web pages and interactive websites. I’m a Full Stack Engineer
+        based in Los Angeles with strong expertise in Java, Spring Boot, and modern web development. I’ve built scalable
+        microservices, optimized backend systems, and led cross-functional teams to deliver impactful products. At{' '}
+        <strong className="text-stone-100">Global Data Tek</strong>, I engineered core system modules that improved
+        performance by 40%. At <strong className="text-stone-100">One Community Global</strong>, I led the development
+        of a portfolio generator that helped users land jobs 60% faster. My passion lies in building clean, maintainable
+        code and user-focused solutions.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time, you can catch me <strong className="text-stone-100">Programing</strong>,
-        playing <strong className="text-stone-100">Final Fantasy XIV</strong>, or exploring interesting places
-        and trying new restaurants with friends.
+        In my free time, you can catch me <strong className="text-stone-100">Programing</strong>, playing{' '}
+        <strong className="text-stone-100">Final Fantasy XIV</strong>, or exploring interesting places and trying new
+        restaurants with friends.
       </p>
     </>
   ),
@@ -278,17 +279,32 @@ export const education: TimelineItem[] = [
     date: 'May 2023',
     location: 'Boston, MA',
     title: 'Northeastern University - Master',
-    content: <p>Majored in Computer Science with a focus on web development, specializing in Java as the main language.
-      Experienced in React and Spring Boot. Conducted research on vision-language pre-training (VLP) and authored a
-      paper titled <b><i>Rate Pets’ Images and Find Their Pawpularity</i></b>.</p>,
+    content: (
+      <p>
+        Majored in Computer Science with a focus on web development, specializing in Java as the main language.
+        Experienced in React and Spring Boot. Conducted research on vision-language pre-training (VLP) and authored a
+        paper titled{' '}
+        <b>
+          <i>Rate Pets’ Images and Find Their Pawpularity</i>
+        </b>
+        .
+      </p>
+    ),
   },
   {
     date: 'May 2021',
     location: 'Albany, NY',
     title: 'SUNY at Albany - Bachelor',
-    content: <p>Majored in Computer Science, focusing on algorithms and data structures, with Java as main
-      language. Researched Natural Language Processing (NLP) and authored a paper titled <b><i>BIAS in NLP</i></b>,
-      analyzing biases in NLP models.</p>,
+    content: (
+      <p>
+        Majored in Computer Science, focusing on algorithms and data structures, with Java as main language. Researched
+        Natural Language Processing (NLP) and authored a paper titled{' '}
+        <b>
+          <i>BIAS in NLP</i>
+        </b>
+        , analyzing biases in NLP models.
+      </p>
+    ),
   },
 ];
 
@@ -299,11 +315,15 @@ export const experience: TimelineItem[] = [
     title: 'Full Stack Engineer',
     content: (
       <p>
-      • Engineered enterprise-grade applications using <b>Java, Spring Boot, Spring MVC, and JPA</b>, designing <b>RESTful microservices</b> for scalable system communication.<br />
-      • Led end-to-end development of core modules (Login, Signup, Timesheet, Member Search) in an <b>Agile Scrum</b> workflow, boosting performance by <b>40%</b> and enhancing UX.<br />
-      • Architected a layered backend structure (Controller, Service, Repository), optimizing database access via <b>JPA</b>, which cut query latency by <b>35%</b>.<br />
-      • Established <b>unit and integration testing pipelines</b> to resolve critical bugs and improve deployment reliability.<br />
-     </p>
+        • Engineered enterprise-grade applications using <b>Java, Spring Boot, Spring MVC, and JPA</b>, designing{' '}
+        <b>RESTful microservices</b> for scalable system communication.
+        <br />• Led end-to-end development of core modules (Login, Signup, Timesheet, Member Search) in an{' '}
+        <b>Agile Scrum</b> workflow, boosting performance by <b>40%</b> and enhancing UX.
+        <br />• Architected a layered backend structure (Controller, Service, Repository), optimizing database access
+        via <b>JPA</b>, which cut query latency by <b>35%</b>.<br />• Established{' '}
+        <b>unit and integration testing pipelines</b> to resolve critical bugs and improve deployment reliability.
+        <br />
+      </p>
     ),
   },
   {
@@ -312,11 +332,15 @@ export const experience: TimelineItem[] = [
     title: 'Software Engineer ',
     content: (
       <p>
-      • Directed a <b>10-member team</b> to develop a <b>Java/JavaScript-based</b> portfolio generator, boosting users’ job acquisition rates by <b>60%</b>.<br />
-      • Applied <b>Spring MVC</b> to enforce separation of concerns, improving maintainability and modularity of the backend system.<br />
-      • Built a <b>real-time group chat</b> using <b>React</b> and <b>Mantine</b>, enhancing internal team communication.<br />
-      • Integrated <b>Async/Await</b> patterns to streamline asynchronous UI workflows and improve responsiveness.<br />
-    </p>
+        • Directed a <b>10-member team</b> to develop a <b>Java/JavaScript-based</b> portfolio generator, boosting
+        users’ job acquisition rates by <b>60%</b>.<br />• Applied <b>Spring MVC</b> to enforce separation of concerns,
+        improving maintainability and modularity of the backend system.
+        <br />• Built a <b>real-time group chat</b> using <b>React</b> and <b>Mantine</b>, enhancing internal team
+        communication.
+        <br />• Integrated <b>Async/Await</b> patterns to streamline asynchronous UI workflows and improve
+        responsiveness.
+        <br />
+      </p>
     ),
   },
   {
@@ -325,10 +349,13 @@ export const experience: TimelineItem[] = [
     title: 'Software engineer ',
     content: (
       <p>
-      • Built an interactive <b>chat feature</b> using <b>TypeScript, React, MUI, and Redux</b>, increasing user engagement by <b>30%</b>.<br />
-      • Integrated <b>real-time communication</b> via <b>Socket.IO</b> and managed side effects using <b>Redux-Saga</b> for a seamless UX.<br />
-      • Designed <b>modular UI components</b> (e.g., chat drawer) to enhance accessibility and improve interface clarity.<br />
-    </p>
+        • Built an interactive <b>chat feature</b> using <b>TypeScript, React, MUI, and Redux</b>, increasing user
+        engagement by <b>30%</b>.<br />• Integrated <b>real-time communication</b> via <b>Socket.IO</b> and managed side
+        effects using <b>Redux-Saga</b> for a seamless UX.
+        <br />• Designed <b>modular UI components</b> (e.g., chat drawer) to enhance accessibility and improve interface
+        clarity.
+        <br />
+      </p>
     ),
   },
 ];
