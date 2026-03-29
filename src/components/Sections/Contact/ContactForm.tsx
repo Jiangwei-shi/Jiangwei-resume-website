@@ -1,5 +1,7 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
+import {useLocale} from '../../../contexts/LocaleContext';
+
 interface FormData {
   name: string;
   email: string;
@@ -11,6 +13,9 @@ type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
 const ContactForm: FC = memo(() => {
+  const {messages} = useLocale();
+  const formCopy = messages.contact.form;
+
   const defaultData = useMemo(
     () => ({
       name: '',
@@ -39,62 +44,65 @@ const ContactForm: FC = memo(() => {
     [data, submitStatus],
   );
 
-  const handleSendMessage = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey?.trim()) {
-      setSubmitStatus('error');
-      setFeedback('Contact form is not configured. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your environment.');
-      return;
-    }
-
-    const form = event.currentTarget;
-    const fd = new FormData(form);
-    const name = String(fd.get('name') ?? '').trim();
-    const email = String(fd.get('email') ?? '').trim();
-    const message = String(fd.get('message') ?? '').trim();
-
-    setSubmitStatus('submitting');
-    setFeedback(null);
-
-    try {
-      const res = await fetch(WEB3FORMS_URL, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: accessKey.trim(),
-          subject: `[Portfolio] Message from ${name || 'visitor'}`,
-          name,
-          email,
-          message,
-        }),
-      });
-
-      const json = (await res.json()) as {
-        body?: {message?: string};
-        message?: string;
-        success?: boolean;
-      };
-      const apiMessage = json.body?.message ?? json.message;
-
-      if (!res.ok || json.success === false) {
+  const handleSendMessage = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey?.trim()) {
         setSubmitStatus('error');
-        setFeedback(apiMessage ?? 'Something went wrong. Please try again or use the email link instead.');
+        setFeedback(formCopy.configError);
         return;
       }
 
-      setSubmitStatus('success');
-      setFeedback('Thanks — your message was sent.');
-      setData(defaultData);
-      form.reset();
-    } catch {
-      setSubmitStatus('error');
-      setFeedback('Network error. Check your connection and try again.');
-    }
-  }, [defaultData]);
+      const form = event.currentTarget;
+      const fd = new FormData(form);
+      const name = String(fd.get('name') ?? '').trim();
+      const email = String(fd.get('email') ?? '').trim();
+      const message = String(fd.get('message') ?? '').trim();
+
+      setSubmitStatus('submitting');
+      setFeedback(null);
+
+      try {
+        const res = await fetch(WEB3FORMS_URL, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: accessKey.trim(),
+            subject: `[Portfolio] Message from ${name || 'visitor'}`,
+            email,
+            message,
+            name,
+          }),
+        });
+
+        const json = (await res.json()) as {
+          body?: {message?: string};
+          message?: string;
+          success?: boolean;
+        };
+        const apiMessage = json.body?.message ?? json.message;
+
+        if (!res.ok || json.success === false) {
+          setSubmitStatus('error');
+          setFeedback(apiMessage ?? formCopy.unknownError);
+          return;
+        }
+
+        setSubmitStatus('success');
+        setFeedback(formCopy.success);
+        setData(defaultData);
+        form.reset();
+      } catch {
+        setSubmitStatus('error');
+        setFeedback(formCopy.networkError);
+      }
+    },
+    [defaultData, formCopy.configError, formCopy.networkError, formCopy.success, formCopy.unknownError],
+  );
 
   const inputClasses =
     'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
@@ -120,7 +128,7 @@ const ContactForm: FC = memo(() => {
         className={inputClasses}
         name="name"
         onChange={onChange}
-        placeholder="Name"
+        placeholder={formCopy.namePlaceholder}
         required
         type="text"
         value={data.name}
@@ -130,7 +138,7 @@ const ContactForm: FC = memo(() => {
         className={inputClasses}
         name="email"
         onChange={onChange}
-        placeholder="Email"
+        placeholder={formCopy.emailPlaceholder}
         required
         type="email"
         value={data.email}
@@ -140,18 +148,18 @@ const ContactForm: FC = memo(() => {
         maxLength={250}
         name="message"
         onChange={onChange}
-        placeholder="Message"
+        placeholder={formCopy.messagePlaceholder}
         required
         rows={6}
         value={data.message}
       />
       <button
         aria-busy={isSubmitting}
-        aria-label="Submit contact form"
+        aria-label={formCopy.submitAria}
         className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800 disabled:cursor-not-allowed disabled:opacity-60"
         disabled={isSubmitting}
         type="submit">
-        {isSubmitting ? 'Sending…' : 'Send Message'}
+        {isSubmitting ? formCopy.sending : formCopy.send}
       </button>
     </form>
   );

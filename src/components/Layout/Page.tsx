@@ -3,16 +3,20 @@ import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {memo, PropsWithChildren} from 'react';
 
+import {useLocale} from '../../contexts/LocaleContext';
 import {HomepageMeta} from '../../data/dataDef';
 
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
   const {asPath: pathname} = useRouter();
+  const {locale} = useLocale();
+  const ogLocale = locale === 'zh' ? 'zh_CN' : 'en_US';
 
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta content={description} name="description" />
+        <meta content={ogLocale} property="og:locale" />
 
         {/* several domains list the same content, make sure google knows we mean this one. */}
         <link href={`https://reactresume.com${pathname}`} key="canonical" rel="canonical" />

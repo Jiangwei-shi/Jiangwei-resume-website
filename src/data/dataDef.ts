@@ -1,5 +1,5 @@
 import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import {FC, ForwardRefExoticComponent, type ReactNode, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
@@ -18,18 +18,16 @@ export interface HomepageMeta {
 }
 
 /**
- * Hero section
+ * Hero section（文案在 i18n；此处仅存资源与链接）
  */
 export interface Hero {
-  imageSrc: string;
-  name: string;
-  description: JSX.Element;
   actions: HeroActionItem[];
+  imageSrc: string;
 }
 
 interface HeroActionItem {
+  actionKey: 'contact' | 'resume';
   href: string;
-  text: string;
   primary?: boolean;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
@@ -87,10 +85,10 @@ export interface PortfolioItem {
  * Resume section
  */
 export interface TimelineItem {
+  content: ReactNode;
   date: string;
   location: string;
   title: string;
-  content: JSX.Element;
 }
 
 /**
@@ -145,7 +143,8 @@ export interface ContactValue {
  * Social items
  */
 export interface Social {
-  label: string;
   Icon: FC<IconProps>;
   href: string;
+  /** 与 `messages.social` 中的键一致，用于无障碍标签 */
+  id: string;
 }
