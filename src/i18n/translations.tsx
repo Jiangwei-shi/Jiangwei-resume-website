@@ -175,7 +175,7 @@ const zh: Messages = {
     },
   },
   footer: {
-    rightsLine: '© {year} 石江伟 · 保留所有权利',
+    rightsLine: '© {year} 石江玮 · 保留所有权利',
   },
   header: {
     menuButtonAria: '打开菜单',
@@ -187,7 +187,7 @@ const zh: Messages = {
       resume: '下载简历',
     },
     imageAltSuffix: '主视觉',
-    name: '我是石江伟。',
+    name: '我是石江玮',
     paragraphs: [
       [
         {text: '我是一名常驻洛杉矶的 '},
@@ -215,8 +215,8 @@ const zh: Messages = {
     ariaLabel: '切换语言',
   },
   meta: {
-    description: '石江伟 — 全栈工程师（洛杉矶）个人作品集与简历站点',
-    title: '石江伟 | 全栈工程师',
+    description: '石江玮 — 全栈工程师（洛杉矶）个人作品集与简历站点',
+    title: '石江玮 | 全栈工程师',
   },
   nav: {
     about: '关于',
