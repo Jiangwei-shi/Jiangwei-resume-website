@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.pnp.*
 .yarn
 
 # testing
@@ -15,10 +16,12 @@
 
 # production
 /build
-tsconfig.tsbuildinfo
+*.tsbuildinfo
 
 # misc
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.pem
 
 # debug
@@ -38,3 +41,8 @@ yarn-error.log*
 
 # idea
 .idea/
+
+# local editors and AI tools
+.vscode/
+.agents/
+.codex/

@@ -138,10 +138,10 @@ const zh: Messages = {
       {label: '国籍', text: '中国'},
       {label: '兴趣', text: '编程、电子游戏、动漫'},
       {label: '教育', text: '东北大学'},
-      {label: '供职', text: 'Dlle Construction Inc'},
+      {label: '供职', text: 'Amex express'},
     ],
     description:
-      '常驻洛杉矶的全栈工程师，擅长 Java、Spring Boot 与可扩展 Web 应用。在 Global Data Tek 期间构建核心后端与微服务模块，系统性能提升约 40%；曾在 One Community Global 带领 10 人团队开发作品集生成工具，使用户获得工作机会的比例提升约 60%。热爱整洁代码、稳健架构与有影响力的用户体验。',
+      '曾在 Amex 从事数据库管理工作，之后回国创业。创业期间，与中国科学技术大学及华中科技大学开展合作，并与 Luxe AF 联合开发了 WMS 仓储管理系统。',
     heading: '关于我',
   },
   common: {
@@ -190,16 +190,12 @@ const zh: Messages = {
     name: '我是石江玮',
     paragraphs: [
       [
-        {text: '我是一名常驻洛杉矶的 '},
+        {text: '我是一名 '},
         {bold: true, text: '全栈工程师'},
-        {text: '，目前在 '},
-        {bold: true, text: 'Global Data Tek'},
+        {text: '，曾在 '},
+        {bold: true, text: 'Amex'},
         {
-          text: ' 工作，专注打造优秀的网页与互动站点。擅长 Java、Spring Boot 与现代 Web 开发，曾构建可扩展微服务、优化后端系统，并带领跨职能团队交付有价值的产品。在 ',
-        },
-        {bold: true, text: 'One Community Global'},
-        {
-          text: ' 期间，我主导开发作品集生成工具，帮助用户更快获得工作机会。我热衷编写清晰、可维护的代码，并以用户为中心解决问题。',
+          text: ' 从事数据库管理工作，之后回国创业。创业期间，与中国科学技术大学及华中科技大学开展合作，并与 Luxe AF 联合开发了 WMS 仓储管理系统。',
         },
       ],
       [
@@ -347,13 +343,10 @@ const en: Messages = {
       {label: 'Nationality', text: 'Chinese'},
       {label: 'Interests', text: 'Programming, video games, anime'},
       {label: 'Study', text: 'Northeastern University'},
-      {label: 'Employment', text: 'Dlle Construction Inc'},
+      {label: 'Employment', text: 'Amex express'},
     ],
-    description: `Full Stack Engineer based in Los Angeles with strong expertise in Java, Spring Boot, 
-  and scalable web application development. At Global Data Tek, I built core backend modules and microservices 
-  that improved system performance by 40%. Previously, I led a 10-member team at One Community Global to develop 
-  a portfolio generator that increased user job acquisition rates by 60%. Passionate about clean code, thoughtful 
-  architecture, and delivering impactful user experiences.`,
+    description:
+      'Previously worked in database administration at Amex before returning to China to start a business. During this entrepreneurial venture, I collaborated with the University of Science and Technology of China and Huazhong University of Science and Technology, and co-developed a WMS (Warehouse Management System) with Luxe AF.',
     heading: 'About me',
   },
   common: {
@@ -403,16 +396,12 @@ const en: Messages = {
     name: `I'm Jiangwei Shi.`,
     paragraphs: [
       [
-        {text: "I'm a Los Angeles-based "},
+        {text: "I'm a "},
         {bold: true, text: 'Full Stack Engineer'},
-        {text: ', currently working at '},
-        {bold: true, text: 'Global Data Tek'},
+        {text: ' who previously worked in database administration at '},
+        {bold: true, text: 'Amex'},
         {
-          text: ', helping create stunning web pages and interactive websites. With strong expertise in Java, Spring Boot, and modern web development. I’ve built scalable microservices, optimized backend systems, and led cross-functional teams to deliver impactful products. At ',
-        },
-        {bold: true, text: 'One Community Global'},
-        {
-          text: ', I led the development of a portfolio generator that helped users land jobs 60% faster. My passion lies in building clean, maintainable code and user-focused solutions.',
+          text: ' before returning to China to start a business. During this entrepreneurial venture, I collaborated with the University of Science and Technology of China and Huazhong University of Science and Technology, and co-developed a WMS (Warehouse Management System) with Luxe AF.',
         },
       ],
       [
