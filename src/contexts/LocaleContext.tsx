@@ -11,8 +11,9 @@ import {
 } from 'react';
 
 import {type Messages} from '../i18n/messages';
+import {saveLocalePreference} from '../i18n/preference';
 import {translations} from '../i18n/translations';
-import {isLocale, type Locale,LOCALE_STORAGE_KEY} from '../i18n/types';
+import {DEFAULT_LOCALE, type Locale} from '../i18n/types';
 
 export type LocaleContextValue = {
   locale: Locale;
@@ -23,48 +24,39 @@ export type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-export const LocaleProvider: FC<PropsWithChildren> = memo(({children}) => {
-  const [locale, setLocaleState] = useState<Locale>('zh');
-  const [storageHydrated, setStorageHydrated] = useState(false);
+export const LocaleProvider: FC<PropsWithChildren<{initialLocale?: Locale}>> = memo(
+  ({children, initialLocale = DEFAULT_LOCALE}) => {
+    const [locale, setLocaleState] = useState<Locale>(initialLocale);
 
-  useEffect(() => {
-    const raw = localStorage.getItem(LOCALE_STORAGE_KEY);
-    if (isLocale(raw)) {
-      setLocaleState(raw);
-    }
-    setStorageHydrated(true);
-  }, []);
+    useEffect(() => {
+      saveLocalePreference(locale);
+      document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en';
+    }, [locale]);
 
-  useEffect(() => {
-    if (!storageHydrated) {
-      return;
-    }
-    localStorage.setItem(LOCALE_STORAGE_KEY, locale);
-    document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en';
-  }, [locale, storageHydrated]);
+    const setLocale = useCallback((next: Locale) => {
+      saveLocalePreference(next);
+      setLocaleState(next);
+    }, []);
 
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-  }, []);
+    const toggleLocale = useCallback(() => {
+      setLocale(locale === 'zh' ? 'en' : 'zh');
+    }, [locale, setLocale]);
 
-  const toggleLocale = useCallback(() => {
-    setLocaleState(prev => (prev === 'zh' ? 'en' : 'zh'));
-  }, []);
+    const messages = translations[locale];
 
-  const messages = translations[locale];
+    const value = useMemo(
+      (): LocaleContextValue => ({
+        locale,
+        messages,
+        setLocale,
+        toggleLocale,
+      }),
+      [locale, messages, setLocale, toggleLocale],
+    );
 
-  const value = useMemo(
-    (): LocaleContextValue => ({
-      locale,
-      messages,
-      setLocale,
-      toggleLocale,
-    }),
-    [locale, messages, setLocale, toggleLocale],
-  );
-
-  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
-});
+    return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
+  },
+);
 
 LocaleProvider.displayName = 'LocaleProvider';
 

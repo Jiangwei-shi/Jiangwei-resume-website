@@ -28,7 +28,8 @@ const About: FC = memo(() => {
             <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
               <Image
                 alt={messages.common.imageAltProfile}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-center"
+                sizes="(min-width: 768px) 128px, 96px"
                 src={profileImageSrc}
               />
             </div>
@@ -43,11 +44,11 @@ const About: FC = memo(() => {
             {aboutItems.map(({label, text}, idx) => {
               const Icon = aboutIcons[idx];
               return (
-              <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
-                {Icon && <Icon className="h-5 w-5 text-white" />}
-                <span className="text-sm font-bold text-white">{label}:</span>
-                <span className=" text-sm text-gray-300">{text}</span>
-              </li>
+                <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
+                  {Icon && <Icon className="h-5 w-5 text-white" />}
+                  <span className="text-sm font-bold text-white">{label}:</span>
+                  <span className=" text-sm text-gray-300">{text}</span>
+                </li>
               );
             })}
           </ul>

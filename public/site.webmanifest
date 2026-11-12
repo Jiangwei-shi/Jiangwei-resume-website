@@ -1,8 +1,9 @@
 {
-  "name": "react-resume-template",
-  "short_name": "react-resume-template",
+  "name": "Jiangwei Shi",
+  "short_name": "Jiangwei",
   "icons": [
-    {"src": "/profile.ico", "type": "image/x-icon", "sizes": "any", "purpose": "any"}
+    {"src": "/avatar-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any"},
+    {"src": "/avatar-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any"}
   ],
   "theme_color": "#515455",
   "background_color": "#515455",

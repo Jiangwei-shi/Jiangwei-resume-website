@@ -1,3 +1,4 @@
+import type {GetServerSideProps} from 'next';
 import dynamic from 'next/dynamic';
 import {FC, memo} from 'react';
 
@@ -10,6 +11,14 @@ import Portfolio from '../components/Sections/Portfolio';
 import Resume from '../components/Sections/Resume';
 import Testimonials from '../components/Sections/Testimonials';
 import {useLocale} from '../contexts/LocaleContext';
+import {resolveLocale} from '../i18n/preference';
+import {DEFAULT_LOCALE, type Locale, LOCALE_COOKIE_KEY} from '../i18n/types';
+
+export const getServerSideProps: GetServerSideProps<{initialLocale: Locale}> = async ({req, res}) => {
+  const initialLocale = resolveLocale(req.cookies[LOCALE_COOKIE_KEY]) ?? DEFAULT_LOCALE;
+  res.setHeader('Cache-Control', 'private, no-store');
+  return {props: {initialLocale}};
+};
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});

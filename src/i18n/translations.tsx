@@ -170,15 +170,15 @@ function expValiteeEn(): ReactNode {
 const zh: Messages = {
   about: {
     aboutItems: [
-      {label: '所在地', text: '加利福尼亚州洛杉矶阿卡迪亚'},
-      {label: '年龄', text: '26'},
+      {label: '所在地', text: '中国湖北武汉'},
+      {label: '年龄', text: '28'},
       {label: '国籍', text: '中国'},
-      {label: '兴趣', text: '编程、电子游戏、动漫'},
+      {label: '兴趣', text: '编程、滑雪'},
       {label: '教育', text: '东北大学'},
-      {label: '供职', text: 'Amex express'},
+      {label: '供职', text: 'Visteon'},
     ],
     description:
-      '曾在 Amex 从事数据库管理工作，之后回国创业。创业期间，与中国科学技术大学及华中科技大学开展合作，并与 Luxe AF 联合开发了 WMS 仓储管理系统。',
+      '目前在 Visteon 担任高级 DevOps 工程师，负责基于 agosense 的跨企业 Jira 集成与 CI/CD 流程。此前在 American Express 从事后端开发，使用 Spring Boot、MySQL、Redis 和 Kafka 构建分布式服务。此外，我负责 True Luxe AF 的整体项目架构，并参与 Luxe AF WMS 的库存模型设计。',
     heading: '关于我',
   },
   common: {
@@ -228,19 +228,19 @@ const zh: Messages = {
     paragraphs: [
       [
         {text: '我是一名 '},
-        {bold: true, text: '全栈工程师'},
+        {bold: true, text: '高级 DevOps 工程师'},
+        {text: '，现就职于 '},
+        {bold: true, text: 'Visteon'},
         {text: '，曾在 '},
-        {bold: true, text: 'Amex'},
-        {
-          text: ' 从事数据库管理工作，之后回国创业。创业期间，与中国科学技术大学及华中科技大学开展合作，并与 Luxe AF 联合开发了 WMS 仓储管理系统。',
-        },
+        {bold: true, text: 'American Express'},
+        {text: ' 从事后端开发。我专注于构建可靠、可扩展的系统，关注从后端设计到上线交付的完整流程。'},
       ],
       [
-        {text: '工作之余，我喜欢 '},
-        {bold: true, text: '写代码'},
-        {text: '、游玩 '},
-        {bold: true, text: '最终幻想 XIV'},
-        {text: '，也会和朋友一起探索有趣的地方、品尝新的餐厅。'},
+        {text: '我的实践涵盖 '},
+        {bold: true, text: 'Java / Spring Boot'},
+        {text: ' 服务、'},
+        {bold: true, text: 'CI/CD'},
+        {text: '、跨企业 Jira 集成，以及电商架构与 WMS 库存建模。工作之外，我喜欢独立开发和滑雪，也喜欢把日常灵感做成实用的产品。'},
       ],
     ],
   },
@@ -248,8 +248,8 @@ const zh: Messages = {
     ariaLabel: '切换语言',
   },
   meta: {
-    description: '石江玮 — 全栈工程师（洛杉矶）个人作品集与简历站点',
-    title: '石江玮 | 全栈工程师',
+    description: '石江玮 — Visteon 高级 DevOps 工程师，拥有 American Express 后端开发经验，专注于分布式服务、持续交付与系统架构。',
+    title: '石江玮 | DevOps 与后端工程师',
   },
   nav: {
     about: '关于',
@@ -421,15 +421,15 @@ const zh: Messages = {
 const en: Messages = {
   about: {
     aboutItems: [
-      {label: 'Location', text: 'Arcadia, LA'},
-      {label: 'Age', text: '26'},
+      {label: 'Location', text: 'Wuhan, Hubei, China'},
+      {label: 'Age', text: '28'},
       {label: 'Nationality', text: 'Chinese'},
-      {label: 'Interests', text: 'Programming, video games, anime'},
+      {label: 'Interests', text: 'Programming, skiing'},
       {label: 'Study', text: 'Northeastern University'},
-      {label: 'Employment', text: 'Amex express'},
+      {label: 'Employment', text: 'Visteon'},
     ],
     description:
-      'Previously worked in database administration at Amex before returning to China to start a business. During this entrepreneurial venture, I collaborated with the University of Science and Technology of China and Huazhong University of Science and Technology, and co-developed a WMS (Warehouse Management System) with Luxe AF.',
+      'I am a Senior DevOps Engineer at Visteon, working on agosense-based B2B Jira integrations and CI/CD workflows. Previously, I built distributed backend services at American Express using Spring Boot, MySQL, Redis, and Kafka. I also lead the project architecture for True Luxe AF and contribute to inventory model design for the Luxe AF warehouse management system.',
     heading: 'About me',
   },
   common: {
@@ -480,19 +480,23 @@ const en: Messages = {
     paragraphs: [
       [
         {text: "I'm a "},
-        {bold: true, text: 'Full Stack Engineer'},
-        {text: ' who previously worked in database administration at '},
-        {bold: true, text: 'Amex'},
+        {bold: true, text: 'Senior DevOps Engineer'},
+        {text: ' at '},
+        {bold: true, text: 'Visteon'},
+        {text: ', with a background in backend engineering at '},
+        {bold: true, text: 'American Express'},
         {
-          text: ' before returning to China to start a business. During this entrepreneurial venture, I collaborated with the University of Science and Technology of China and Huazhong University of Science and Technology, and co-developed a WMS (Warehouse Management System) with Luxe AF.',
+          text: '. I focus on reliable, scalable systems and the full journey from backend design to production delivery.',
         },
       ],
       [
-        {text: 'In my free time, you can catch me '},
-        {bold: true, text: 'programming'},
-        {text: ', playing '},
-        {bold: true, text: 'Final Fantasy XIV'},
-        {text: ', or exploring interesting places and trying new restaurants with friends.'},
+        {text: 'My work spans '},
+        {bold: true, text: 'Java / Spring Boot'},
+        {text: ' services, '},
+        {bold: true, text: 'CI/CD'},
+        {
+          text: ', cross-company Jira integrations, e-commerce architecture, and WMS inventory modeling. Outside work, I enjoy building personal projects, skiing, and turning everyday ideas into useful products.',
+        },
       ],
     ],
   },
@@ -500,8 +504,9 @@ const en: Messages = {
     ariaLabel: 'Switch language',
   },
   meta: {
-    description: "Jiangwei Shi — Full Stack Engineer portfolio and resume (Los Angeles)",
-    title: 'Jiangwei Shi | Full Stack Engineer',
+    description:
+      'Jiangwei Shi — Senior DevOps Engineer at Visteon with backend engineering experience at American Express, focused on distributed services, continuous delivery, and system architecture.',
+    title: 'Jiangwei Shi | DevOps & Backend Engineer',
   },
   nav: {
     about: 'About',

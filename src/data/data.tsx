@@ -136,8 +136,8 @@ export const contact: ContactSection = {
       type: ContactType.Email,
     },
     {
-      href: 'https://www.google.ca/maps/place/Arcadia,+CA/@34.1334232,-118.0718985,13z',
-      text: 'Arcadia LA, US',
+      href: 'https://www.google.com/maps/search/?api=1&query=Wuhan%2C%20Hubei%2C%20China',
+      text: 'Wuhan, Hubei, China',
       type: ContactType.Location,
     },
     {
