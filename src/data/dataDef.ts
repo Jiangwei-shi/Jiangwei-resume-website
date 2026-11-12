@@ -2,6 +2,7 @@ import {StaticImageData} from 'next/image';
 import {FC, ForwardRefExoticComponent, type ReactNode, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
+import {type Locale} from '../i18n/types';
 
 export interface HomepageMeta {
   title: string;
@@ -27,7 +28,7 @@ export interface Hero {
 
 interface HeroActionItem {
   actionKey: 'contact' | 'resume';
-  href: string;
+  href: string | Record<Locale, string>;
   primary?: boolean;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }

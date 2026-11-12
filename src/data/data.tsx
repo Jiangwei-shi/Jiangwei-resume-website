@@ -29,7 +29,10 @@ export const heroData: Hero = {
   actions: [
     {
       actionKey: 'resume' as const,
-      href: '/assets/Resume.pdf',
+      href: {
+        en: '/assets/Resume.pdf',
+        zh: '/assets/Resume-zh.pdf',
+      },
       Icon: ArrowDownTrayIcon,
       primary: true,
     },
