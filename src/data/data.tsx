@@ -1,16 +1,5 @@
 import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
 
-import porfolioImage1 from '../../public/assets/portfolio-1.jpg';
-import porfolioImage2 from '../../public/assets/portfolio-2.jpg';
-import porfolioImage3 from '../../public/assets/portfolio-3.jpg';
-import porfolioImage4 from '../../public/assets/portfolio-4.jpg';
-import porfolioImage5 from '../../public/assets/portfolio-5.jpg';
-import porfolioImage6 from '../../public/assets/portfolio-6.jpg';
-import porfolioImage7 from '../../public/assets/portfolio-7.jpg';
-import porfolioImage8 from '../../public/assets/portfolio-8.jpg';
-import porfolioImage9 from '../../public/assets/portfolio-9.jpg';
-import porfolioImage10 from '../../public/assets/portfolio-10.jpg';
-import porfolioImage11 from '../../public/assets/portfolio-11.jpg';
 import BilibiliIcon from '../components/Icon/Bilibili';
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
@@ -18,7 +7,7 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.webp';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
-import {ContactSection, ContactType, Hero, Social} from './dataDef';
+import {ContactSection, ContactType, Hero, type PortfolioAsset, Social} from './dataDef';
 
 /**
  * Section anchors（URL hash，保持英文以便链接稳定）
@@ -60,18 +49,74 @@ export const aboutData = {
 /**
  * Portfolio：图片与链接来自此列表，标题与说明见 `src/i18n/translations.tsx`
  */
-export const portfolioAssets = [
-  {image: porfolioImage1, url: '/assets/portfolio-1.jpg'},
-  {image: porfolioImage2, url: '/assets/portfolio-2.jpg'},
-  {image: porfolioImage3, url: '/assets/portfolio-3.jpg'},
-  {image: porfolioImage4, url: '/assets/portfolio-4.jpg'},
-  {image: porfolioImage5, url: '/assets/portfolio-5.jpg'},
-  {image: porfolioImage6, url: '/assets/portfolio-6.jpg'},
-  {image: porfolioImage7, url: '/assets/portfolio-7.jpg'},
-  {image: porfolioImage8, url: '/assets/portfolio-8.jpg'},
-  {image: porfolioImage9, url: '/assets/portfolio-9.jpg'},
-  {image: porfolioImage10, url: '/assets/portfolio-10.jpg'},
-  {image: porfolioImage11, url: '/assets/portfolio-11.jpg'},
+export const portfolioAssets: PortfolioAsset[] = [
+  {
+    category: 'projects',
+    id: 'luxeaf',
+    image: '/assets/work/true-luxeaf.png',
+    kind: 'website',
+    tags: ['E-commerce', 'System Architecture'],
+    url: 'https://trueluxeaf.com/us',
+  },
+  {
+    category: 'projects',
+    id: 'wms',
+    image: '/assets/work/luxeaf-wms.png',
+    kind: 'website',
+    tags: ['WMS', 'Inventory Modeling'],
+    url: 'https://luxeafinv.com/login',
+  },
+  {
+    category: 'projects',
+    id: 'yuanyuting',
+    image: '/assets/work/yuanyuting.png',
+    kind: 'website',
+    tags: ['Personal Website', 'Independent Project'],
+    url: 'https://www.yuanyuting.cc',
+  },
+  {
+    category: 'projects',
+    id: 'snowball',
+    image: '/assets/work/snow-ball.jpg',
+    imagePosition: '50% 85%',
+    kind: 'source',
+    tags: ['Unity', 'C#', 'Mobile Game'],
+    url: 'https://github.com/Jiangwei-shi/Snow-ball-mobile-game',
+  },
+  {
+    category: 'projects',
+    id: 'dungeon',
+    image: '/assets/work/dungeon-maze.jpg',
+    kind: 'source',
+    tags: ['Java', 'Swing', 'Kruskal'],
+    url: 'https://github.com/Jiangwei-shi/Dungeon-maze',
+  },
+  {
+    category: 'research',
+    id: 'pawpularity',
+    image: '/assets/work/pawpularity.jpg',
+    imagePosition: 'top',
+    kind: 'paper',
+    tags: ['Computer Vision', 'VGG16', 'Regression'],
+    url: '/assets/papers/pawpularity.pdf',
+  },
+  {
+    category: 'research',
+    id: 'bias',
+    image: '/assets/work/bias-in-nlp.jpg',
+    imagePosition: 'top',
+    kind: 'paper',
+    tags: ['NLP', 'Word Embeddings', 'Bias Analysis'],
+    url: '/assets/papers/bias-in-nlp.pdf',
+  },
+  {
+    category: 'algorithms',
+    id: 'leetcode',
+    image: '/assets/work/leetcode.png',
+    kind: 'profile',
+    tags: ['Java', 'SQL', 'Data Structures & Algorithms'],
+    url: 'https://leetcode.com/u/wuliangcc/',
+  },
 ];
 
 export const testimonialConfig = {

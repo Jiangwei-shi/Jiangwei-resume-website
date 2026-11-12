@@ -21,7 +21,6 @@ export interface AboutItemCopy {
 }
 
 export interface SkillItemCopy {
-  level: number;
   name: string;
 }
 
@@ -32,11 +31,13 @@ export interface SkillGroupCopy {
 
 export interface PortfolioItemCopy {
   description: string;
+  role: string;
   title: string;
 }
 
 export interface TestimonialCopy {
   name: string;
+  role?: string;
   text: string;
 }
 

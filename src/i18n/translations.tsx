@@ -53,28 +53,65 @@ function eduBachelorEn(): ReactNode {
   );
 }
 
-function expGdtZh(): ReactNode {
+function expVisteonZh(): ReactNode {
   return (
     <p>
-      • 使用 <b>Java、Spring Boot、Spring MVC、JPA</b> 构建企业级应用，设计可扩展系统通信的 <b>RESTful 微服务</b>。
-      <br />• 在 <b>敏捷 Scrum</b> 流程中端到端负责核心模块（登录、注册、工时、成员搜索），性能提升约 <b>40%</b>，并改善用户体验。
-      <br />• 搭建分层后端架构（Controller、Service、Repository），通过 <b>JPA</b> 优化数据库访问，查询延迟降低约 <b>35%</b>。
-      <br />• 搭建 <b>单元与集成测试流水线</b>，修复关键缺陷并提升发布可靠性。
+      • 使用 <b>agosense</b> 维护企业间（B2B）的 <b>Jira 集成</b>，同步两家公司之间的项目与工作项数据。
+      <br />• 维护数据映射与同步流程，排查集成异常，保障跨公司信息的一致性与协作效率。
+      <br />• 维护并优化 <b>CI/CD 流水线</b>，支持自动化构建、测试与部署，保障项目持续交付。
+      <br />• 支持日常 <b>DevOps 运维</b>、环境配置与故障排查，协同开发团队解决交付过程中的问题。
       <br />
     </p>
   );
 }
 
-function expGdtEn(): ReactNode {
+function expVisteonEn(): ReactNode {
   return (
     <p>
-      • Engineered enterprise-grade applications using <b>Java, Spring Boot, Spring MVC, and JPA</b>, designing{' '}
-      <b>RESTful microservices</b> for scalable system communication.
-      <br />• Led end-to-end development of core modules (Login, Signup, Timesheet, Member Search) in an{' '}
-      <b>Agile Scrum</b> workflow, boosting performance by <b>40%</b> and enhancing UX.
-      <br />• Architected a layered backend structure (Controller, Service, Repository), optimizing database access via{' '}
-      <b>JPA</b>, which cut query latency by <b>35%</b>.<br />• Established <b>unit and integration testing pipelines</b>{' '}
-      to resolve critical bugs and improve deployment reliability.
+      • Maintain <b>B2B Jira integrations</b> using <b>agosense</b> to synchronize project and work item data between
+      two companies.
+      <br />• Maintain data mappings and synchronization workflows, troubleshooting integration issues to support data
+      consistency and cross-company collaboration.
+      <br />• Maintain and improve <b>CI/CD pipelines</b> for automated builds, testing, and deployment to support
+      reliable project delivery.
+      <br />• Support daily <b>DevOps operations</b>, environment configuration, and troubleshooting, collaborating with
+      development teams to resolve delivery issues.
+      <br />
+    </p>
+  );
+}
+
+function expAmexZh(): ReactNode {
+  return (
+    <p>
+      • 使用 <b>Spring Boot、MySQL 和 Redis</b> 设计分布式后端系统，通过微服务架构支持高并发场景。
+      <br />• 通过 <b>MySQL 索引优化、查询调优与 Redis 缓存</b> 降低延迟并提升系统吞吐量。
+      <br />• 实现基于 <b>Kafka</b> 的事件驱动架构，解耦服务并提升系统的可扩展性与容错能力。
+      <br />• 使用 <b>Redis 分布式锁与乐观锁</b> 保障高并发场景下的数据一致性。
+      <br />• 构建企业级系统（<b>WMS / 交易抽象</b>），对复杂业务流程进行建模。
+      <br />• 使用 <b>Docker</b> 将服务部署至 <b>AWS EC2</b>，并集成 <b>S3</b> 实现安全存储。
+      <br />• 将库存抽象为余额模型，设计类金融系统，支持借记、贷记与转账操作。
+      <br />
+    </p>
+  );
+}
+
+function expAmexEn(): ReactNode {
+  return (
+    <p>
+      • Designed distributed backend systems using <b>Spring Boot, MySQL, and Redis</b>, supporting high-concurrency
+      scenarios with microservices architecture.
+      <br />• Optimized database performance via <b>MySQL indexing, query tuning, and Redis caching</b>, reducing
+      latency and improving throughput.
+      <br />• Implemented <b>event-driven architecture (Kafka-based design)</b> to decouple services and enhance
+      scalability and fault tolerance.
+      <br />• Ensured data consistency under high concurrency using{' '}
+      <b>Redis distributed locks and optimistic locking</b>.
+      <br />• Built enterprise-grade systems (<b>WMS / transaction abstraction</b>) and modeled complex business
+      workflows.
+      <br />• Deployed services on <b>AWS EC2</b> with <b>Docker</b> and integrated <b>S3</b> for secure storage.
+      <br />• Designed financial-like systems by abstracting inventory into balance models, supporting debit, credit,
+      and transfer operations.
       <br />
     </p>
   );
@@ -222,20 +259,59 @@ const zh: Messages = {
     testimonials: '推荐',
   },
   portfolio: {
-    heading: '部分作品',
-    items: [
-      {description: '', title: '我的桌面'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 2'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 3'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 4'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 5'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 6'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 7'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 8'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 9'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 10'},
-      {description: '在此简要介绍你的项目。', title: '项目标题 11'},
-    ],
+    actions: {
+      paper: '阅读论文（PDF）',
+      profile: '查看 LeetCode',
+      source: '查看 GitHub',
+      website: '访问网站',
+    },
+    description: '从商业系统、独立网站到游戏开发、机器学习研究与算法实践。',
+    filters: {all: '全部', algorithms: '算法', projects: '项目', research: '研究'},
+    heading: '项目与研究',
+    items: {
+      bias: {
+        description: '通过词嵌入与余弦相似度，分析不同语义领域中的性别偏差，探索 NLP 数据集的偏差识别方法。',
+        role: '团队研究 · 纽约州立大学奥尔巴尼分校',
+        title: 'BIAS in NLP — 自然语言处理偏差研究',
+      },
+      dungeon: {
+        description:
+          '使用 Java 与 Swing 构建地牢探索游戏，通过 Kruskal 算法生成迷宫，支持路径探索、宝物收集与怪物战斗。',
+        role: 'Java 游戏开发',
+        title: 'Dungeon Maze — 地牢探索',
+      },
+      leetcode: {
+        description: '以 Java 为主进行数据结构与算法练习，覆盖动态规划、图搜索与回溯，并练习 SQL 查询。',
+        role: '算法与问题求解',
+        title: 'LeetCode — wuliangcc',
+      },
+      luxeaf: {
+        description: '面向二手奢侈品交易的电商网站，负责整个项目的架构设计，连接商品展示与线上购物体验。',
+        role: '项目架构负责人',
+        title: 'True Luxe AF — 二手奢侈品商城',
+      },
+      pawpularity: {
+        description: '利用预训练 VGG16 提取宠物图像特征，对比多种回归方法，预测宠物照片的受欢迎程度。',
+        role: '共同作者 · 东北大学',
+        title: 'Rate Pets’ Images and Find Their Pawpularity',
+      },
+      snowball: {
+        description:
+          '基于 Unity 与 C# 开发的移动端跑酷游戏，控制雪球收集金币与雪花，躲避火焰和障碍，体验体积变化机制。',
+        role: 'Unity 游戏开发',
+        title: 'Snow-ball — 雪球跑酷',
+      },
+      wms: {
+        description: '为 Luxe AF 构建的仓储管理系统，参与库存模型设计，支持库存数据的组织与仓库业务管理。',
+        role: '库存模型设计',
+        title: 'Luxe AF — 仓储管理系统',
+      },
+      yuanyuting: {
+        description: '独立开发的个人网站，用来记录我与女朋友的日常生活，珍藏共同经历的点滴与回忆。',
+        role: '独立开发',
+        title: 'yuanyuting.cc — 我们的日常',
+      },
+    },
   },
   resume: {
     education: [
@@ -254,61 +330,64 @@ const zh: Messages = {
     ],
     experience: [
       {
-        content: expGdtZh(),
-        date: '2024 年 5 月 — 至今',
-        location: 'Global Data Tek',
-        title: '全栈工程师',
+        content: expVisteonZh(),
+        date: '2026 年 11 月 — 至今',
+        location: 'Visteon | 湖北',
+        title: '高级 DevOps 工程师',
+      },
+      {
+        content: expAmexZh(),
+        date: '2024 年 5 月 — 2026 年 1 月',
+        location: 'American Express | 加利福尼亚州',
+        title: '后端软件工程师',
       },
       {
         content: expOcgZh(),
         date: '2023 年 5 月 — 2024 年 5 月',
-        location: 'One Community Global',
+        location: 'One Community Global | 纽约',
         title: '软件工程师',
       },
       {
         content: expValiteeZh(),
         date: '2022 年 5 月 — 2022 年 8 月',
-        location: 'Valitee',
+        location: 'Valitee | 波士顿',
         title: '前端开发实习生',
       },
     ],
     sectionEducation: '教育背景',
     sectionSkills: '技能',
-    sectionSkillsIntro: '这里用一组技能快照向雇主展示你的强项',
     sectionWork: '工作经历',
   },
   skills: [
     {
-      name: '口语',
-      skills: [
-        {level: 10, name: '普通话'},
-        {level: 8, name: '英语'},
-        {level: 2, name: '日语'},
-      ],
+      name: '后端与架构',
+      skills: [{name: 'Java'}, {name: 'Spring Boot'}, {name: 'MVC 设计模式'}],
     },
     {
       name: '前端开发',
+      skills: [{name: 'React'}, {name: 'TypeScript'}, {name: 'Next.js'}, {name: 'Vue'}],
+    },
+    {
+      name: '数据库与消息系统',
+      skills: [{name: 'MySQL'}, {name: 'Redis'}, {name: 'Kafka'}],
+    },
+    {
+      name: 'DevOps 与云平台',
       skills: [
-        {level: 8, name: 'React'},
-        {level: 8, name: 'TypeScript'},
-        {level: 6, name: 'MUI'},
+        {name: 'Docker'},
+        {name: 'Linux'},
+        {name: 'GitHub Actions'},
+        {name: 'AWS EC2'},
+        {name: 'S3'},
       ],
     },
     {
-      name: '后端开发',
-      skills: [
-        {level: 8, name: 'Java'},
-        {level: 6, name: 'Spring Boot'},
-        {level: 6, name: 'Next.js'},
-      ],
+      name: 'AI 辅助开发',
+      skills: [{name: 'OpenAI Codex'}],
     },
     {
-      name: '部署与数据库',
-      skills: [
-        {level: 8, name: 'Docker'},
-        {level: 6, name: 'Kubernetes'},
-        {level: 8, name: 'MySQL'},
-      ],
+      name: '口语',
+      skills: [{name: '普通话'}, {name: '英语'}],
     },
   ],
   social: {
@@ -318,20 +397,24 @@ const zh: Messages = {
     linkedin: '领英',
   },
   testimonials: {
+    heading: '推荐语',
     items: [
       {
-        name: 'John Doe',
-        text: '可在此展示与他人合作的体验。高质量的推荐通常来自同事、主管或满意客户。',
+        name: 'Michael',
+        text: '江玮善于将复杂需求梳理成清晰、务实的解决方案。他关注边界情况，也愿意深入细节，让最终交付的功能可靠且易于维护。',
       },
       {
-        name: 'Jane Doe',
-        text: '写下他人对你的具体评价，鼓励对方提到项目细节、交付质量或工作风格等亮点。',
+        name: 'Akash',
+        role: 'American Express · 软件工程师',
+        text: '江玮在后端开发中兼顾系统设计与落地细节。他能将接口设计、数据建模和并发控制联系起来，构建清晰、可扩展的服务，并认真对待性能与数据一致性。',
       },
       {
-        name: 'Someone else',
-        text: '可以准备多条推荐语，保持更新，但更应聚焦高质量、能突出你技能与职业素养的内容。',
+        name: 'Xianhua',
+        role: 'Amazon · 软件工程师',
+        text: '江玮能有条理地拆解难题，并清楚说明设计中的取舍。他乐于听取反馈、主动解决问题，始终关注从方案设计到项目交付的整体质量。',
       },
     ],
+    selectLabel: '查看 {name} 的推荐语',
   },
 };
 
@@ -428,20 +511,65 @@ const en: Messages = {
     testimonials: 'Testimonials',
   },
   portfolio: {
-    heading: 'Check out some of my work',
-    items: [
-      {description: '', title: 'My desk table'},
-      {description: 'Give a short description of your project here.', title: 'Project title 2'},
-      {description: 'Give a short description of your project here.', title: 'Project title 3'},
-      {description: 'Give a short description of your project here.', title: 'Project title 4'},
-      {description: 'Give a short description of your project here.', title: 'Project title 5'},
-      {description: 'Give a short description of your project here.', title: 'Project title 6'},
-      {description: 'Give a short description of your project here.', title: 'Project title 7'},
-      {description: 'Give a short description of your project here.', title: 'Project title 8'},
-      {description: 'Give a short description of your project here.', title: 'Project title 9'},
-      {description: 'Give a short description of your project here.', title: 'Project title 10'},
-      {description: 'Give a short description of your project here.', title: 'Project title 11'},
-    ],
+    actions: {
+      paper: 'Read paper (PDF)',
+      profile: 'View LeetCode',
+      source: 'View GitHub',
+      website: 'Visit website',
+    },
+    description: 'Business systems, personal websites, games, machine learning research, and algorithm practice.',
+    filters: {all: 'All work', algorithms: 'Algorithms', projects: 'Projects', research: 'Research'},
+    heading: 'Selected Work & Research',
+    items: {
+      bias: {
+        description:
+          'Investigated gender bias across semantic domains using word embeddings and cosine similarity to identify bias in NLP datasets.',
+        role: 'Team research · University at Albany, SUNY',
+        title: 'BIAS in NLP',
+      },
+      dungeon: {
+        description:
+          'A Java and Swing dungeon exploration game with Kruskal-based maze generation, treasure collection, navigation, and monster encounters.',
+        role: 'Java game development',
+        title: 'Dungeon Maze',
+      },
+      leetcode: {
+        description:
+          'Data structures and algorithms practice primarily in Java, covering dynamic programming, graph search, and backtracking, alongside SQL problems.',
+        role: 'Algorithms & problem solving',
+        title: 'LeetCode — wuliangcc',
+      },
+      luxeaf: {
+        description:
+          'A pre-owned luxury marketplace. Responsible for the architecture of the entire project, connecting product discovery with the online shopping experience.',
+        role: 'Project architecture',
+        title: 'True Luxe AF — Luxury Resale',
+      },
+      pawpularity: {
+        description:
+          'Extracted pet image features with pretrained VGG16 and compared regression methods to predict the popularity of pet photographs.',
+        role: 'Co-author · Northeastern University',
+        title: 'Rate Pets’ Images and Find Their Pawpularity',
+      },
+      snowball: {
+        description:
+          'A Unity and C# mobile runner featuring coin collection, snowflakes that grow the snowball, and flames and obstacles to avoid.',
+        role: 'Unity game development',
+        title: 'Snow-ball Mobile Game',
+      },
+      wms: {
+        description:
+          'A warehouse management system for Luxe AF. Contributed to inventory model design to support inventory data organization and warehouse operations.',
+        role: 'Inventory model design',
+        title: 'Luxe AF — Warehouse Management',
+      },
+      yuanyuting: {
+        description:
+          'An independently built personal website to document everyday life with my girlfriend and preserve our shared stories and memories.',
+        role: 'Independent development',
+        title: 'yuanyuting.cc — Our Everyday',
+      },
+    },
   },
   resume: {
     education: [
@@ -460,61 +588,64 @@ const en: Messages = {
     ],
     experience: [
       {
-        content: expGdtEn(),
-        date: 'May 2024 - Present',
-        location: 'Global Data Tek',
-        title: 'Full Stack Engineer',
+        content: expVisteonEn(),
+        date: 'Nov 2026 - Present',
+        location: 'Visteon | Hubei',
+        title: 'Senior DevOps Engineer',
+      },
+      {
+        content: expAmexEn(),
+        date: 'May 2024 - Jan 2026',
+        location: 'American Express | California',
+        title: 'Backend Software Engineer',
       },
       {
         content: expOcgEn(),
         date: 'May 2023 - May 2024',
-        location: 'One Community Global',
+        location: 'One Community Global | New York',
         title: 'Software Engineer',
       },
       {
         content: expValiteeEn(),
         date: 'May 2022 - Aug 2022',
-        location: 'Valitee',
+        location: 'Valitee | Boston',
         title: 'Front End Web Developer Intern',
       },
     ],
     sectionEducation: 'Education',
     sectionSkills: 'Skills',
-    sectionSkillsIntro: 'Here you can show a snapshot of your skills to show off to employers',
     sectionWork: 'Work',
   },
   skills: [
     {
-      name: 'Spoken languages',
+      name: 'Backend & Architecture',
+      skills: [{name: 'Java'}, {name: 'Spring Boot'}, {name: 'MVC Design Pattern'}],
+    },
+    {
+      name: 'Frontend Development',
+      skills: [{name: 'React'}, {name: 'TypeScript'}, {name: 'Next.js'}, {name: 'Vue'}],
+    },
+    {
+      name: 'Databases & Messaging',
+      skills: [{name: 'MySQL'}, {name: 'Redis'}, {name: 'Kafka'}],
+    },
+    {
+      name: 'DevOps & Cloud',
       skills: [
-        {level: 10, name: 'Mandarin'},
-        {level: 8, name: 'English'},
-        {level: 2, name: 'Japanese'},
+        {name: 'Docker'},
+        {name: 'Linux'},
+        {name: 'GitHub Actions'},
+        {name: 'AWS EC2'},
+        {name: 'S3'},
       ],
     },
     {
-      name: 'Frontend development',
-      skills: [
-        {level: 8, name: 'React'},
-        {level: 8, name: 'Typescript'},
-        {level: 6, name: 'MUI'},
-      ],
+      name: 'AI-Assisted Development',
+      skills: [{name: 'OpenAI Codex'}],
     },
     {
-      name: 'Backend development',
-      skills: [
-        {level: 8, name: 'Java'},
-        {level: 6, name: 'Spring Boot'},
-        {level: 6, name: 'Next'},
-      ],
-    },
-    {
-      name: 'Deploy & Database',
-      skills: [
-        {level: 8, name: 'Docker'},
-        {level: 6, name: 'Kubernetes'},
-        {level: 8, name: 'MYSQL'},
-      ],
+      name: 'Spoken Languages',
+      skills: [{name: 'Mandarin'}, {name: 'English'}],
     },
   ],
   social: {
@@ -524,20 +655,24 @@ const en: Messages = {
     linkedin: 'LinkedIn',
   },
   testimonials: {
+    heading: 'Testimonials',
     items: [
       {
-        name: 'John Doe',
-        text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
+        name: 'Michael',
+        text: 'Jiangwei turns complex requirements into clear, practical solutions. He pays attention to edge cases and follows through on the details, delivering features that are reliable and easy to maintain.',
       },
       {
-        name: 'Jane Doe',
-        text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
+        name: 'Akash',
+        role: 'Software Engineer · American Express',
+        text: 'Jiangwei brings a thoughtful approach to backend engineering. He connects API design, data modeling, and concurrency control to build clear, scalable services, with careful attention to performance and data consistency.',
       },
       {
-        name: 'Someone else',
-        text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
+        name: 'Xianhua',
+        role: 'Software Engineer · Amazon',
+        text: 'Jiangwei breaks down difficult problems methodically and explains design tradeoffs clearly. He welcomes feedback, takes initiative in resolving issues, and stays focused on quality from design through delivery.',
       },
     ],
+    selectLabel: 'View testimonial from {name}',
   },
 };
 

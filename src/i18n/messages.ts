@@ -1,4 +1,4 @@
-import type {ContactType} from '../data/dataDef';
+import type {ContactType, PortfolioCategory, PortfolioItemId, PortfolioLinkType} from '../data/dataDef';
 import type {
   AboutItemCopy,
   HeroParagraph,
@@ -65,15 +65,17 @@ export interface Messages {
     testimonials: string;
   };
   portfolio: {
+    actions: Record<PortfolioLinkType, string>;
+    description: string;
+    filters: Record<'all' | PortfolioCategory, string>;
     heading: string;
-    items: PortfolioItemCopy[];
+    items: Record<PortfolioItemId, PortfolioItemCopy>;
   };
   resume: {
     education: TimelineEntryCopy[];
     experience: TimelineEntryCopy[];
     sectionEducation: string;
     sectionSkills: string;
-    sectionSkillsIntro: string;
     sectionWork: string;
   };
   skills: SkillGroupCopy[];
@@ -84,6 +86,8 @@ export interface Messages {
     linkedin: string;
   };
   testimonials: {
+    heading: string;
     items: TestimonialCopy[];
+    selectLabel: string;
   };
 }

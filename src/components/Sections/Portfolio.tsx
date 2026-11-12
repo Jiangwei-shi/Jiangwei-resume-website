@@ -1,48 +1,61 @@
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Image from 'next/image';
-import {FC, memo, MouseEvent, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {FC, memo, useMemo, useState} from 'react';
 
-import {isMobile} from '../../config';
 import {useLocale} from '../../contexts/LocaleContext';
 import {portfolioAssets, SectionId} from '../../data/data';
-import {PortfolioItem} from '../../data/dataDef';
-import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
+import {type PortfolioCategory, type PortfolioItem, type PortfolioLinkType} from '../../data/dataDef';
 import Section from '../Layout/Section';
+
+const filters = ['all', 'projects', 'research', 'algorithms'] as const;
 
 const Portfolio: FC = memo(() => {
   const {messages} = useLocale();
-  const items = useMemo((): PortfolioItem[] => {
-    return portfolioAssets.map((asset, index) => {
-      const copy = messages.portfolio.items[index];
-      return {
-        description: copy?.description ?? '',
-        image: asset.image,
-        title: copy?.title ?? `Item ${index + 1}`,
-        url: asset.url,
-      };
-    });
-  }, [messages]);
+  const {portfolio} = messages;
+  const [filter, setFilter] = useState<'all' | PortfolioCategory>('all');
+  const items = useMemo(
+    (): PortfolioItem[] =>
+      portfolioAssets
+        .filter(asset => filter === 'all' || asset.category === filter)
+        .map(asset => ({...asset, ...portfolio.items[asset.id]})),
+    [filter, portfolio.items],
+  );
 
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.Portfolio}>
-      <div className="flex flex-col gap-y-8">
-        <h2 className="self-center text-xl font-bold text-white">{messages.portfolio.heading}</h2>
-        <div className=" w-full columns-2 md:columns-3 lg:columns-4">
-          {items.map((item, index) => {
-            const {title, image} = item;
-            return (
-              <div className="pb-6" key={`${title}-${index}`}>
-                <div
-                  className={classNames(
-                    'relative h-max w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl',
-                  )}>
-                  <Image alt={title} className="h-full w-full" placeholder="blur" src={image} />
-                  <ItemOverlay item={item} />
-                </div>
-              </div>
-            );
-          })}
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-3 text-center">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">{portfolio.heading}</h2>
+          <p className="text-sm leading-6 text-neutral-300 sm:text-base">{portfolio.description}</p>
+        </div>
+        <div aria-label={portfolio.heading} className="flex flex-wrap justify-center gap-2" role="group">
+          {filters.map(value => (
+            <button
+              aria-controls="portfolio-items"
+              aria-pressed={filter === value}
+              className={classNames(
+                'rounded-full border px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-800',
+                filter === value
+                  ? 'border-orange-500 bg-orange-500 text-white'
+                  : 'border-neutral-600 text-neutral-200 hover:border-orange-500 hover:text-white',
+              )}
+              key={value}
+              onClick={() => setFilter(value)}
+              type="button">
+              {portfolio.filters[value]}
+            </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2" id="portfolio-items">
+          {items.map(item => (
+            <PortfolioCard
+              actions={portfolio.actions}
+              categoryLabel={portfolio.filters[item.category]}
+              item={item}
+              key={item.id}
+            />
+          ))}
         </div>
       </div>
     </Section>
@@ -51,48 +64,50 @@ const Portfolio: FC = memo(() => {
 
 Portfolio.displayName = 'Portfolio';
 
-const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, description}}) => {
-  const [mobile, setMobile] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const linkRef = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    if (isMobile) {
-      setMobile(true);
-    }
-  }, []);
-  useDetectOutsideClick(linkRef, () => setShowOverlay(false));
-
-  const handleItemClick = useCallback(
-    (event: MouseEvent<HTMLElement>) => {
-      if (mobile && !showOverlay) {
-        event.preventDefault();
-        setShowOverlay(!showOverlay);
-      }
-    },
-    [mobile, showOverlay],
-  );
+const PortfolioCard: FC<{
+  actions: Record<PortfolioLinkType, string>;
+  categoryLabel: string;
+  item: PortfolioItem;
+}> = memo(({actions, categoryLabel, item}) => {
+  const imageStyle = useMemo(() => ({objectPosition: item.imagePosition ?? 'center'}), [item.imagePosition]);
 
   return (
     <a
-      className={classNames(
-        'absolute inset-0 h-full w-full  bg-gray-900 transition-all duration-300',
-        {'opacity-0 hover:opacity-80': !mobile},
-        showOverlay ? 'opacity-80' : 'opacity-0',
-      )}
-      href={url}
-      onClick={handleItemClick}
-      ref={linkRef}
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-900 transition-colors hover:border-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-800"
+      href={item.url}
+      rel="noopener noreferrer"
       target="_blank">
-      <div className="relative h-full w-full p-4">
-        <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
-          <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
-          <p className="text-xs text-white opacity-100 sm:text-sm">{description}</p>
-        </div>
-        <ArrowTopRightOnSquareIcon className="absolute bottom-1 right-1 h-4 w-4 shrink-0 text-white sm:bottom-2 sm:right-2" />
+      <div className="relative aspect-video overflow-hidden bg-neutral-100">
+        <Image
+          alt=""
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          sizes="(min-width: 768px) 500px, 100vw"
+          src={item.image}
+          style={imageStyle}
+        />
+      </div>
+      <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
+        <span className="text-xs font-bold uppercase tracking-widest text-orange-400">{categoryLabel}</span>
+        <h3 className="text-xl font-bold leading-snug text-white">{item.title}</h3>
+        <p className="text-sm font-medium text-orange-300">{item.role}</p>
+        <p className="text-sm leading-6 text-neutral-300">{item.description}</p>
+        <ul className="mt-auto flex flex-wrap gap-2 pt-2">
+          {item.tags.map(tag => (
+            <li className="rounded-full border border-neutral-600 px-2.5 py-1 text-xs text-neutral-200" key={tag}>
+              {tag}
+            </li>
+          ))}
+        </ul>
+        <span className="mt-2 flex items-center gap-2 text-sm font-bold text-orange-400">
+          {actions[item.kind]}
+          <ArrowTopRightOnSquareIcon aria-hidden="true" className="h-4 w-4" />
+        </span>
       </div>
     </a>
   );
 });
+
+PortfolioCard.displayName = 'PortfolioCard';
 
 export default Portfolio;

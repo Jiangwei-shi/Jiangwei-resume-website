@@ -9,7 +9,7 @@ import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {
   const {messages} = useLocale();
-  const {education, experience, sectionEducation, sectionSkills, sectionSkillsIntro, sectionWork} = messages.resume;
+  const {education, experience, sectionEducation, sectionSkills, sectionWork} = messages.resume;
 
   return (
     <Section className="bg-neutral-100" sectionId={SectionId.Resume}>
@@ -25,7 +25,6 @@ const Resume: FC = memo(() => {
           ))}
         </ResumeSection>
         <ResumeSection title={sectionSkills}>
-          <p className="pb-8">{sectionSkillsIntro}</p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {messages.skills.map((skillGroup, index) => (
               <SkillGroup key={`${skillGroup.name}-${index}`} skillGroup={skillGroup} />

@@ -62,8 +62,6 @@ export interface Stat {
 
 export interface Skill {
   name: string;
-  level: number;
-  max?: number;
 }
 
 export interface SkillGroup {
@@ -74,11 +72,26 @@ export interface SkillGroup {
 /**
  * Portfolio section
  */
-export interface PortfolioItem {
+export type PortfolioCategory = 'projects' | 'research' | 'algorithms';
+
+export type PortfolioItemId = 'snowball' | 'dungeon' | 'yuanyuting' | 'wms' | 'luxeaf' | 'leetcode' | 'pawpularity' | 'bias';
+
+export type PortfolioLinkType = 'source' | 'website' | 'paper' | 'profile';
+
+export interface PortfolioAsset {
+  category: PortfolioCategory;
+  id: PortfolioItemId;
+  image: string;
+  imagePosition?: string;
+  kind: PortfolioLinkType;
+  tags: string[];
+  url: string;
+}
+
+export interface PortfolioItem extends PortfolioAsset {
   title: string;
   description: string;
-  url: string;
-  image: string | StaticImageData;
+  role: string;
 }
 
 /**
@@ -102,6 +115,7 @@ export interface TestimonialSection {
 export interface Testimonial {
   image?: string;
   name: string;
+  role?: string;
   text: string;
 }
 

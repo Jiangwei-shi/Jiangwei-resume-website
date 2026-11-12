@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#FFF7ED"/>
+  <circle cx="1092" cy="66" r="254" fill="#FFEDD5"/>
+  <circle cx="66" cy="651" r="212" fill="#FED7AA" fill-opacity=".48"/>
+  <path d="M92 90h56m-28-28v56M1035 525h50m-25-25v50" stroke="#F97316" stroke-width="3" stroke-linecap="round"/>
+  <rect x="755" y="150" width="260" height="332" rx="16" transform="rotate(12 755 150)" fill="#FED7AA"/>
+  <rect x="713" y="128" width="260" height="332" rx="16" transform="rotate(-8 713 128)" fill="white" stroke="#FDBA74" stroke-width="2"/>
+  <path d="M835 237c-38-52-102 7 0 78 103-71 39-130 0-78Z" fill="#F97316"/>
+  <path d="M763 367h142m-129 23h115" stroke="#FDBA74" stroke-width="8" stroke-linecap="round"/>
+  <text x="104" y="233" fill="#C2410C" font-family="Arial, sans-serif" font-size="19" letter-spacing="6">OUR EVERYDAY</text>
+  <text x="100" y="323" fill="#431407" font-family="Georgia, serif" font-size="78">Little moments.</text>
+  <text x="100" y="414" fill="#431407" font-family="Georgia, serif" font-size="78">Shared stories.</text>
+  <path d="M104 461h70" stroke="#F97316" stroke-width="5" stroke-linecap="round"/>
+  <text x="104" y="515" fill="#9A3412" font-family="Arial, sans-serif" font-size="25">yuanyuting.cc</text>
+</svg>
